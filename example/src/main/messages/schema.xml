@@ -1,0 +1,58 @@
+<schema name="Order"
+        package="codes.writeonce.messages.example.model.order">
+    <!--
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://writeonce.codes/xsd/deltastore"
+        xsi:schemaLocation="http://writeonce.codes/xsd/deltastore http://writeonce.codes/xsd/deltastore/deltastore.xsd"
+    -->
+
+    <import resource="common.xml"/>
+
+    <doc>foo</doc>
+    <type name="MyType">
+
+        <extends ref="BaseType"/>
+
+        <doc>foo</doc>
+        <field name="longValue" nullable="true" type="long"/>
+    </type>
+
+    <doc>
+        <p>
+            foo<br/>bar
+        </p>
+        <ul>
+            <li>qwe</li>
+        </ul>
+        <ol>
+            <li>rty</li>
+        </ol>
+        <see typeRef="MyType" fieldRef="list"/>
+        <deprecated>bar</deprecated>
+    </doc>
+    <message>
+
+        <docRef name="asd"/>
+        <field name="intValue" nullable="true" type="int"/>
+
+        <doc>foo</doc>
+        <field name="myValue" nullable="true" type="MyType"/>
+
+        <extends ref="MyType"/>
+
+        <doc>foo</doc>
+        <list name="list" nullable="true" type=""/>
+
+        <doc>foo</doc>
+        <set name="set" nullable="true" type=""/>
+
+        <doc>foo</doc>
+        <map name="map" nullable="true" keyType="" valueType=""/>
+
+    </message>
+
+    <docDef name="asd">
+        lorem ipsum
+    </docDef>
+
+</schema>
