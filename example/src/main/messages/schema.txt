@@ -1,0 +1,65 @@
+taxonomy 294c8e7f-3ec6-4f27-aa03-b304124a7bfe
+
+import common.txt
+
+@ foo
+type MyType extends BaseType {
+    longValue long
+}
+
+message Xyz extends MyType {
+    @ asd
+    intValue nullable int,
+    @ foo
+    myValue nullable MyType,
+    list nullable list<MyType>,
+    set nullable set<int>,
+    map nullable map<int, MyType>
+}
+
+message RegisterUserEvent {
+    email string,
+    username string,
+    password string,
+    seed long,
+    locales list<string>,
+    captchaScore nullable decimal,
+    generatedToken string,
+    referralLinkId nullable id<ReferralLink>,
+    createBinanceAccount boolean,
+    feeBnbBurn boolean,
+    interestBnbBurn boolean,
+    bindBinanceAccount boolean,
+    bindEmail boolean,
+    bindPhone boolean,
+    secretWord nullable string,
+    emailNotificationsEnabled boolean,
+    takeProfits list<TaskItemOperation<TakeProfitInfo>>
+}
+
+type TaskItemOperation<T> {
+
+}
+
+type CreateItemOperation<T> extends TaskItemOperation<T> {
+    value T
+}
+
+type ReplaceItemOperation<T> extends TaskItemOperation<T> {
+    value T
+}
+
+type RemoveItemOperation<T> extends TaskItemOperation<T> {
+    id long
+}
+
+type CancelItemOperation<T> extends TaskItemOperation<T> {
+    id long
+}
+
+@ asfasdg
+enum OrderType {
+    BuyOrder,
+    @ asdfaSF
+    SellOrder,
+}

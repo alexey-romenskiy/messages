@@ -1,0 +1,2 @@
+BaseFeedSettings extendable com.cryptexclub.service.domain.state.BaseFeedSettings
+User final com.cryptexclub.service.domain.state.User

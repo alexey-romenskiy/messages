@@ -5,8 +5,6 @@ import codes.writeonce.messages.example.StringInterner;
 import javax.annotation.Nonnull;
 import java.nio.ByteBuffer;
 
-import static codes.writeonce.messages.example.StringInterner.intern;
-
 public class CompactingStringDeserializer extends StringDeserializer {
 
     public CompactingStringDeserializer(
@@ -115,6 +113,6 @@ public class CompactingStringDeserializer extends StringDeserializer {
     @Override
     @Nonnull
     protected String buildString() {
-        return intern(bytes, 0, size, hash);
+        return StringInterner.intern(bytes, 0, size, hash);
     }
 }
